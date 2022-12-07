@@ -12,30 +12,49 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <button>My location</button>
-    <h1>New York</h1>
-    <div class="row">
-      <div class="col-6">
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-          alt="Cloudy"
-        />
-        24°C | °F
+    <div class="container">
+      <div class="all">
+        <button class="button">My location</button>
+        <h1>New York</h1>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="Cloudy"
+            />
+            24°C | °F
+          </div>
+          <div class="col-6">
+            <ul class="li">
+              Precipitation: 0%
+            </ul>
+            <ul class="li">
+              Humidity: 77%
+            </ul>
+            <ul class="li">
+              Wind: 8 km/h
+            </ul>
+          </div>
+          <ul class="date">
+            <li>7 Dec, Wed</li>
+            <li>21:45</li>
+          </ul>
+        </div>
+        <small>
+          <a href="https://github.com/hatoriren" target="_blank"
+            >Open-source code
+          </a>
+          by Anastasiia Nerestenko</small
+        >
       </div>
-      <div class="col-6">
-        <ul class="li">
-          Precipitation: 0%
-        </ul>
-        <ul class="li">
-          Humidity: 77%
-        </ul>
-        <ul class="li">
-          Wind: 8 km/h
-        </ul>
-      </div>
-      <span id="date"> 7 Dec, Wed</span>
     </div>
   </body>
   <script src="src/app.js"></script>
