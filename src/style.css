@@ -1,11 +1,14 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-.all {
+.all-app {
+  width: 800px;
   margin: 15px auto;
+}
+
+.all {
   padding: 30px;
   border: 1px solid #dadde1;
-  width: 800px;
   border-radius: 20px;
 }
 
@@ -22,12 +25,14 @@ body {
   background-color: blueviolet;
   color: aliceblue;
 }
-h1 {
+.h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 45px;
+  color: #4eb6b5;
 }
 .date {
   list-style: none;
   text-align: center;
   margin: auto;
+  color: #4eb6b5;
 }
