@@ -1,17 +1,26 @@
 function getTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
-
   let descriptionElement = document.querySelector("h2");
-  descriptionElement.innerHTML = response.data.condition.description;
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.city;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.temperature.humidity;
   let windSpeed = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  descriptionElement.innerHTML = response.data.condition.description;
+  cityElement.innerHTML = response.data.city;
+  humidity.innerHTML = response.data.temperature.humidity;
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconElement.setAttribute(
+    "alt",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.description}.png`
+  );
 }
-let city = "Paris";
+
+let city = "Kyiv";
 let apiKey = "277efc90731af2437305b7o4905bt1d3";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
@@ -44,4 +53,7 @@ let day = days[now.getDay()];
 dateElement.innerHTML = `${date} ${month}, ${day}`;
 let hours = now.getHours();
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 timeElement.innerHTML = `${hours}:${minutes}`;
