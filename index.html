@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -25,7 +26,9 @@
         <div class="all">
           <button class="button">My location</button>
 
-          <h1 class="h1">New York</h1>
+          <h1 class="h1" id="city">New York</h1>
+
+          <h2 class="description" id="description">Clear</h2>
 
           <div class="row">
             <div class="col-6">
@@ -35,19 +38,14 @@
                   alt="Cloudy"
                   id="icon"
                 />
-                <strong class="temperature">12</strong>
-                <span class="units">°C</span>
+                <strong class="temperature" id="temperature">12</strong>
+                <span class="units">°C </span>
               </div>
             </div>
             <div class="col-6">
-              <ul class="li">
-                Precipitation: 0%
-              </ul>
-              <ul class="li">
-                Humidity: 77%
-              </ul>
-              <ul class="li">
-                Wind: 8 km/h
+              <ul class="humidity-and-wind">
+                <li>Humidity: <span id="humidity">77</span>%</li>
+                <li>Wind: <span id="wind">8 </span> km/h</li>
               </ul>
             </div>
             <ul class="date">

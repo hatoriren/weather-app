@@ -1,6 +1,14 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 5px;
+  text-transform: capitalize;
+  margin-bottom: 28px;
+}
 .all-app {
   width: 800px;
   margin: 15px auto;
@@ -8,6 +16,7 @@ body {
 
 .all {
   padding: 30px;
+
   border: 1px solid #dadde1;
   border-radius: 20px;
 }
@@ -29,7 +38,7 @@ body {
   text-align: center;
   font-size: 45px;
   color: #4eb6b5;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .date {
   list-style: none;
@@ -40,6 +49,7 @@ body {
 
 .weather-temperature img {
   margin-right: 15px;
+  margin-left: 20px;
   height: 74px;
   width: 74px;
 }
@@ -47,4 +57,9 @@ body {
   font-weight: 500;
   font-size: 64px;
   line-height: 1;
+}
+
+.humidity-and-wind {
+  list-style: none;
+  margin-left: 10px;
 }
