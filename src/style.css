@@ -29,10 +29,22 @@ body {
   text-align: center;
   font-size: 45px;
   color: #4eb6b5;
+  margin-bottom: 20px;
 }
 .date {
   list-style: none;
   text-align: center;
   margin: auto;
   color: #4eb6b5;
+}
+
+.weather-temperature img {
+  margin-right: 15px;
+  height: 74px;
+  width: 74px;
+}
+.weather-temperature strong {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
 }
