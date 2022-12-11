@@ -23,34 +23,47 @@
   <body>
     <div class="container">
       <div class="all-app">
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
         <div class="all">
-          <button class="button">My location</button>
+          <form class="form-floating" id="form-floating">
+            <div class="row">
+              <div class="col-6" style="width: 200px">
+                <input
+                  type="search"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="Search a city"
+                />
+              </div>
+              <div class="col-4">
+                <input type="submit" value="Search" class="btn btn-primary" />
+              </div>
+            </div>
+          </form>
+          <button class="button" id="myLocation">My location</button>
 
-          <h1 class="h1" id="city">New York</h1>
+          <h1 class="h1" id="city"></h1>
 
-          <h2 class="description" id="description">Clear</h2>
+          <h2 class="description" id="description"></h2>
 
           <div class="row">
             <div class="col-6">
               <div class="d-flex weather-temperature">
-                <img
-                  src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
-                  alt="Cloudy"
-                  id="icon"
-                />
-                <strong class="temperature" id="temperature">12</strong>
-                <span class="units">°C </span>
+                <img src="" alt="Cloudy" id="icon" />
+                <strong class="temperature" id="temperature"></strong>
+                <span class="units">°C │<a href="" id="fahrenheit">°F</a></span>
               </div>
             </div>
             <div class="col-6">
               <ul class="humidity-and-wind">
-                <li>Humidity: <span id="humidity">77</span>%</li>
-                <li>Wind: <span id="wind">8 </span> km/h</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"> </span> km/h</li>
               </ul>
             </div>
             <ul class="date">
-              <li id="date">7 Dec, Wed</li>
-              <li id="time">21:45</li>
+              <li id="date"></li>
+              <li id="time"></li>
             </ul>
           </div>
         </div>

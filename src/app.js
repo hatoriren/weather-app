@@ -5,6 +5,9 @@ function getTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
+
+  celsiusElement = response.data.temperature.current;
+
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   descriptionElement.innerHTML = response.data.condition.description;
   cityElement.innerHTML = response.data.city;
@@ -20,11 +23,36 @@ function getTemperature(response) {
   );
 }
 
-let city = "Kyiv";
-let apiKey = "277efc90731af2437305b7o4905bt1d3";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "277efc90731af2437305b7o4905bt1d3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(getTemperature);
+}
 
-axios.get(apiUrl).then(getTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#floatingInput");
+  search(cityInput.value);
+}
+
+function showPosition(position) {
+  let apiKey = "277efc90731af2437305b7o4905bt1d3";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(apiUrl).then(getTemperature);
+}
+
+function handleClick() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+function converToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusElement * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
 let now = new Date();
 
@@ -57,3 +85,16 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 timeElement.innerHTML = `${hours}:${minutes}`;
+
+let form = document.querySelector("#form-floating");
+form.addEventListener("submit", handleSubmit);
+
+let myLocation = document.querySelector("#myLocation");
+myLocation.addEventListener("click", handleClick);
+
+let fahrenheitElement = document.getElementById("fahrenheit");
+fahrenheitElement.addEventListener("click", converToFahrenheit);
+
+let celsiusElement = null;
+
+search("New York");

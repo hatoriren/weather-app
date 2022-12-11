@@ -62,3 +62,16 @@ h2 {
   list-style: none;
   margin-left: 10px;
 }
+
+.btn-light {
+  margin-bottom: 10px;
+}
+
+.btn-dark {
+  margin-bottom: 10px;
+}
+
+.form-floating {
+  margin-left: 170px;
+  margin-bottom: 20px;
+}
