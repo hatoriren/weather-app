@@ -58,6 +58,15 @@ h2 {
   line-height: 1;
 }
 
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
 .humidity-and-wind {
   list-style: none;
   margin-left: 10px;

@@ -49,9 +49,19 @@ function handleClick() {
 
 function converToFahrenheit(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
   let fahrenheitTemperature = (celsiusElement * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function converToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusElement);
 }
 
 let now = new Date();
@@ -92,8 +102,11 @@ form.addEventListener("submit", handleSubmit);
 let myLocation = document.querySelector("#myLocation");
 myLocation.addEventListener("click", handleClick);
 
-let fahrenheitElement = document.getElementById("fahrenheit");
-fahrenheitElement.addEventListener("click", converToFahrenheit);
+let fahrenheitLink = document.getElementById("fahrenheit");
+fahrenheitLink.addEventListener("click", converToFahrenheit);
+
+let celsiusLink = document.getElementById("celsius");
+celsiusLink.addEventListener("click", converToCelsius);
 
 let celsiusElement = null;
 
