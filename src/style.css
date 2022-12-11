@@ -1,5 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
+  background-image: url("https://i.ibb.co/wyF8LS8/sea-sky-horizon-145313-1920x1080.jpg");
 }
 
 h2 {
@@ -16,8 +17,8 @@ h2 {
 
 .all {
   padding: 30px;
-
-  border: 1px solid #dadde1;
+  background-color: #f2eef0;
+  border: 1px solid #35b5b2;
   border-radius: 20px;
 }
 
@@ -31,20 +32,20 @@ h2 {
 }
 .button:hover {
   cursor: pointer;
-  background-color: blueviolet;
+  background-color: #469597;
   color: aliceblue;
 }
 .h1 {
   text-align: center;
   font-size: 45px;
-  color: #4eb6b5;
+  color: #469597;
   margin-bottom: 5px;
 }
 .date {
   list-style: none;
   text-align: center;
   margin: auto;
-  color: #4eb6b5;
+  color: #469597;
 }
 
 .weather-temperature img {
@@ -72,6 +73,14 @@ h2 {
   margin-left: 10px;
 }
 
+.humidity {
+  font-weight: 600;
+}
+
+.wind {
+  font-weight: 600;
+}
+
 .btn-light {
   margin-bottom: 10px;
 }
@@ -83,4 +92,21 @@ h2 {
 .form-floating {
   margin-left: 170px;
   margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #469597;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #3e8586;
+}
+
+a {
+  color: #3377b3;
+}
+
+a:hover {
+  color: rgb(36, 84, 85);
 }

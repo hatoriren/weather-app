@@ -23,9 +23,23 @@
   <body>
     <div class="container">
       <div class="all-app">
-        <button type="button" class="btn btn-light">Light</button>
-        <button type="button" class="btn btn-dark">Dark</button>
-        <div class="all">
+        <button
+          type="button"
+          class="btn btn-light"
+          id="light"
+          onclick="lightTheme()"
+        >
+          Light
+        </button>
+        <button
+          type="button"
+          class="btn btn-dark"
+          id="dark"
+          onclick="darkTheme()"
+        >
+          Dark
+        </button>
+        <div class="all" id="all">
           <form class="form-floating" id="form-floating">
             <div class="row">
               <div class="col-6" style="width: 200px">
@@ -37,7 +51,12 @@
                 />
               </div>
               <div class="col-4">
-                <input type="submit" value="Search" class="btn btn-primary" />
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary"
+                  id="btnPrimary"
+                />
               </div>
             </div>
           </form>
@@ -50,7 +69,7 @@
           <div class="row">
             <div class="col-6">
               <div class="d-flex weather-temperature">
-                <img src="" alt="Cloudy" id="icon" />
+                <img src="#" alt="#" id="icon" />
                 <strong class="temperature" id="temperature"></strong>
                 <span class="units"
                   ><a href="#" id="celsius" class="active">°C</a> │<a
@@ -63,8 +82,14 @@
             </div>
             <div class="col-6">
               <ul class="humidity-and-wind">
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"> </span> km/h</li>
+                <li>
+                  <strong class="humidity">Humidity:</strong>
+                  <span id="humidity"></span>%
+                </li>
+                <li>
+                  <strong class="wind">Wind:</strong>
+                  <span id="wind"> </span> km/h
+                </li>
               </ul>
             </div>
             <ul class="date">
@@ -73,8 +98,8 @@
             </ul>
           </div>
         </div>
-        <small>
-          <a href="https://github.com/hatoriren" target="_blank"
+        <small id="name">
+          <a href="https://github.com/hatoriren" target="_blank" id="small"
             >Open-source code
           </a>
           by Anastasiia Nerestenko</small
