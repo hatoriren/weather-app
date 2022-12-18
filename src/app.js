@@ -6,8 +6,6 @@ function getTemperature(response) {
   let windSpeed = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
 
-  celsiusElement = response.data.temperature.current;
-
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   descriptionElement.innerHTML = response.data.condition.description;
   cityElement.innerHTML = response.data.city;
@@ -47,7 +45,7 @@ function showForecastButton(coordinates) {
   let key = "277efc90731af2437305b7o4905bt1d3";
   let lon = coordinates.longitude;
   let lat = coordinates.latitude;
-  let url = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${key}`;
+  let url = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${key}&units=metric`;
   axios.get(url).then(displayForecast);
 }
 
@@ -62,23 +60,6 @@ function showPosition(position) {
 
 function handleClick() {
   navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-function converToFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusElement * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function converToCelsius(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusElement);
 }
 
 function darkTheme() {
@@ -143,7 +124,6 @@ function formatDate(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -216,13 +196,5 @@ form.addEventListener("submit", handleSubmit);
 
 let myLocation = document.querySelector("#myLocation");
 myLocation.addEventListener("click", handleClick);
-
-let fahrenheitLink = document.getElementById("fahrenheit");
-fahrenheitLink.addEventListener("click", converToFahrenheit);
-
-let celsiusLink = document.getElementById("celsius");
-celsiusLink.addEventListener("click", converToCelsius);
-
-let celsiusElement = null;
 
 search("New York");

@@ -12,8 +12,9 @@ h2 {
 }
 
 a {
-  color: #3377b3;
+  color: #3e7d89;
 }
+
 .all-app {
   width: 800px;
   margin: 15px auto;
@@ -120,7 +121,7 @@ a:hover {
 }
 
 .weather-forecast-date {
-  opacity: 0.6;
+  opacity: 0.7;
   font-size: 16px;
 }
 
