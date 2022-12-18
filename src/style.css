@@ -10,11 +10,18 @@ h2 {
   text-transform: capitalize;
   margin-bottom: 28px;
 }
+
+a {
+  color: #3377b3;
+}
 .all-app {
   width: 800px;
   margin: 15px auto;
 }
 
+a:hover {
+  color: rgb(36, 84, 85);
+}
 .all {
   padding: 30px;
   background-color: #f2eef0;
@@ -103,10 +110,20 @@ h2 {
   background-color: #3e8586;
 }
 
-a {
-  color: #3377b3;
+.weather-forecast {
+  margin: 20px;
+  text-align: center;
 }
 
-a:hover {
-  color: rgb(36, 84, 85);
+.weather-temperatures {
+  font-size: 14px;
+}
+
+.weather-forecast-date {
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+.weather-forecast-min {
+  opacity: 0.5;
 }

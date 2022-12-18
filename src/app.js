@@ -64,6 +64,63 @@ function converToCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusElement);
 }
 
+function darkTheme() {
+  document.body.style.backgroundImage =
+    "url('https://i.ibb.co/r7J7R84/night-city-road-marking-145375-1920x1080.jpg')";
+  document.getElementById("city").style.color = "#652F4F";
+  document.getElementById("date").style.color = "#652F4F";
+  document.getElementById("time").style.color = "#652F4F";
+  document.getElementById("small").style.color = "#F0E4CE";
+  document.getElementById("name").style.color = "#E08886";
+  document.getElementById("all").style.borderColor = "#652F4F";
+  document.getElementById("btnPrimary").style.backgroundColor = "#652F4F";
+  myLocation.addEventListener(
+    "mouseenter",
+    function (event) {
+      event.target.style.backgroundColor = "#652F4F";
+    },
+    false
+  );
+  myLocation.addEventListener(
+    "mouseleave",
+    function (event) {
+      event.target.style.backgroundColor = "#f2eef0";
+    },
+    false
+  );
+}
+function lightTheme() {
+  document.body.style.backgroundImage =
+    "url('https://i.ibb.co/wyF8LS8/sea-sky-horizon-145313-1920x1080.jpg')";
+  document.getElementById("city").style.color = "#469597";
+  document.getElementById("date").style.color = "#469597";
+  document.getElementById("time").style.color = "#469597";
+  document.getElementById("small").style.color = "#3377b3";
+  document.getElementById("name").style.color = "black";
+  document.getElementById("all").style.borderColor = "#469597";
+  document.getElementById("btnPrimary").style.backgroundColor = "#469597";
+  myLocation.addEventListener(
+    "mouseenter",
+    function (event) {
+      event.target.style.backgroundColor = "#469597";
+    },
+    false
+  );
+  myLocation.addEventListener(
+    "mouseleave",
+    function (event) {
+      event.target.style.backgroundColor = "#f2eef0";
+    },
+    false
+  );
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = "Forecast";
+}
+
 let now = new Date();
 
 let dateElement = document.querySelector("#date");
@@ -108,58 +165,7 @@ fahrenheitLink.addEventListener("click", converToFahrenheit);
 let celsiusLink = document.getElementById("celsius");
 celsiusLink.addEventListener("click", converToCelsius);
 
-function darkTheme() {
-  document.body.style.backgroundImage =
-    "url('https://i.ibb.co/r7J7R84/night-city-road-marking-145375-1920x1080.jpg')";
-  document.getElementById("city").style.color = "#652F4F";
-  document.getElementById("date").style.color = "#652F4F";
-  document.getElementById("time").style.color = "#652F4F";
-  document.getElementById("small").style.color = "#F0E4CE";
-  document.getElementById("name").style.color = "#E08886";
-  document.getElementById("all").style.borderColor = "#652F4F";
-  document.getElementById("btnPrimary").style.backgroundColor = "#652F4F";
-  myLocation.addEventListener(
-    "mouseenter",
-    function (event) {
-      event.target.style.backgroundColor = "#652F4F";
-    },
-    false
-  );
-  myLocation.addEventListener(
-    "mouseleave",
-    function (event) {
-      event.target.style.backgroundColor = "#f2eef0";
-    },
-    false
-  );
-}
-
-function lightTheme() {
-  document.body.style.backgroundImage =
-    "url('https://i.ibb.co/wyF8LS8/sea-sky-horizon-145313-1920x1080.jpg')";
-  document.getElementById("city").style.color = "#469597";
-  document.getElementById("date").style.color = "#469597";
-  document.getElementById("time").style.color = "#469597";
-  document.getElementById("small").style.color = "#3377b3";
-  document.getElementById("name").style.color = "black";
-  document.getElementById("all").style.borderColor = "#469597";
-  document.getElementById("btnPrimary").style.backgroundColor = "#469597";
-  myLocation.addEventListener(
-    "mouseenter",
-    function (event) {
-      event.target.style.backgroundColor = "#469597";
-    },
-    false
-  );
-  myLocation.addEventListener(
-    "mouseleave",
-    function (event) {
-      event.target.style.backgroundColor = "#f2eef0";
-    },
-    false
-  );
-}
-
 let celsiusElement = null;
 
 search("New York");
+displayForecast();
